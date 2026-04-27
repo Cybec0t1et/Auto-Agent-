@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #2563eb; /* Primary Blue */
+  --color-brand-primary-light: #3b82f6;
+  --color-brand-navy: #0f1115; /* Section Background */
+  --color-brand-navy-dark: #0a0c10; /* Base Background */
+  --color-brand-accent-green: #16a34a;
+  --color-border-slate: #1e293b; /* Slate-800 */
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-navy-dark text-slate-200 font-sans antialiased;
+  }
+}
+
+.glass-effect {
+  @apply bg-brand-navy/60 backdrop-blur-md border border-border-slate;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-brand-primary text-white font-bold rounded hover:bg-brand-primary-light transition-all shadow-lg shadow-blue-900/20 active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-slate-800 text-white font-bold rounded border border-slate-700 hover:bg-slate-700 transition-all active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent text-white border border-slate-700 font-bold rounded hover:bg-slate-800 transition-all active:scale-95 flex items-center justify-center gap-2;
+}
+
+.card-dark {
+  @apply bg-brand-navy rounded-lg overflow-hidden border border-border-slate shadow-xl;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
